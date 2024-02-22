@@ -1,0 +1,15 @@
+{% extends 'main.html' %}
+{% load static %}
+{% block content %}
+{% if success %}
+<div class="alert alert-primary alert-dismissible fade show" role="alert">
+    "Blog Updated Successfully!"
+</div>
+{% endif %}
+<form action="/edit_blog/{{blog}}/" enctype="multipart/form-data" method="POST"> {% csrf_token %}
+    <div class="container mt-3">
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-primary">Update</button>
+    </div>
+</form>
+{% endblock %}

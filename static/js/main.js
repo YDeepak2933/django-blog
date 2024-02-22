@@ -1,0 +1,1 @@
+setTimeout(() => { $(".alert").alert('close'); }, 1000);
